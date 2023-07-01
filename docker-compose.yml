@@ -11,4 +11,7 @@ services:
     # 仮想ブリッジであるdocker0にのみ晒されます。晒されたコンテナ側のポートへは、リンクされたサービスからのみアクセスが可能です。
     expose:
       - "8080"
-    tty: true
+    environment:
+      TZ: "Asia/Tokyo"
+    tty:
+        true
