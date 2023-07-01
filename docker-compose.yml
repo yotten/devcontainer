@@ -2,6 +2,13 @@ version: "3.8"
 services:
   devcontainer:
     build: .
+    # volumesとは「永続化できるデータ」又は「データを永続化できる場所」のことを指している
+    # [ホスト側の相対Path]:コンテナの絶対Path
     volumes:
-      - .:/work
+      - .:/workspace
+      - /workspace/frontend/node_modules
+    # exposeはコンテナ側のポートを指定します。指定されたコンテナ側のポートはホストマシンには公開されず、
+    # 仮想ブリッジであるdocker0にのみ晒されます。晒されたコンテナ側のポートへは、リンクされたサービスからのみアクセスが可能です。
+    expose:
+      - "8080"
     tty: true
