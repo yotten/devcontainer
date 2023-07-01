@@ -38,3 +38,12 @@ RUN npm install -g @vue/cli
 WORKDIR /workspace/backend
 RUN poetry install
 EXPOSE 8080 8082
+
+FROM python:3.8-buster as app
+EXPOSE 8080
+WORKDIR /workspace/backend
+COPY --from=base /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
+
+COPY backend/ .
+ENV FLASK_APP /workspace/backend/app.py
+CMD ["python", "app.py"]

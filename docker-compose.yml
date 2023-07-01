@@ -9,8 +9,10 @@ services:
       - /workspace/frontend/node_modules
     # exposeはコンテナ側のポートを指定します。指定されたコンテナ側のポートはホストマシンには公開されず、
     # 仮想ブリッジであるdocker0にのみ晒されます。晒されたコンテナ側のポートへは、リンクされたサービスからのみアクセスが可能です。
-    expose:
-      - "8080"
+    #expose:
+    #  - "8080"
+    ports:
+      - "5000:80"
     environment:
       TZ: "Asia/Tokyo"
     tty:
