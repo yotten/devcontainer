@@ -25,6 +25,14 @@ docker compose down
 </pre>
 
 
-ｘ
+## poetry
+PoetryはPythonのパッケージを管理するツール。
+Poetryを使ってパッケージをインストールしたりアップデートした際は
+* pyproject.toml
+* poetry.lock 
+
+に記載される。
+
+
 # 参考資料
 [2021年お勧め開発環境VSCode＜第4回＞コンテナ活用](https://www.cqpub.co.jp/interface/download/contents2021.htm)
