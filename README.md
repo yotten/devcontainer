@@ -24,7 +24,11 @@ docker compose exec devcontainer bash
 docker compose down
 </pre>
 
-
+## mysql
+<pre>
+docker exec -it devcontainer-db-1 bash
+bash-4.2# mysql -udbuser -pdbpass
+</pre>
 ## poetry
 PoetryはPythonのパッケージを管理するツール。
 Poetryを使ってパッケージをインストールしたりアップデートした際は
